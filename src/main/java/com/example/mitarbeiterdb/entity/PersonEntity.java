@@ -90,4 +90,9 @@ public class PersonEntity implements Serializable {
 		this.anstellungstag = anstellungstag;
 	}
 
+	@Override
+	public String toString() {
+		return "PersonEntity{" + "id = "  + id + ", nachname = " + nachname + ", vorname = " + vorname + ", geburtstag = " + geburtstag + ", abteilung = " + abteilung + ", standortId = " + standortId + ", anstellungstag = " + anstellungstag + "}";
+	}
+
 }

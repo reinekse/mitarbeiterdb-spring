@@ -1,68 +1,68 @@
 package com.example.mitarbeiterdb.entity;
 
-import java.io.Serializable;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "standorte")
 public class StandortEntity implements Serializable {
 
-	private static final long serialVersionUID = -4020197691067599627L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false, updatable = false)
-	private int id;
+    private static final long serialVersionUID = -4020197691067599627L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private int id;
 
-	private String strasse;
-	private String hausnummer;
-	private String plz;
-	private String ort;
+    private String strasse;
+    private String hausnummer;
+    private String plz;
+    private String ort;
 
-	public StandortEntity() {
-	}
+    public StandortEntity() {
+    }
 
-	public StandortEntity(String strasse, String hausnummer, String plz, String ort) {
-		this.strasse = strasse;
-		this.hausnummer = hausnummer;
-		this.plz = plz;
-		this.ort = ort;
-	}
+    public StandortEntity(String strasse, String hausnummer, String plz, String ort) {
+        this.strasse = strasse;
+        this.hausnummer = hausnummer;
+        this.plz = plz;
+        this.ort = ort;
+    }
 
-	public String getStrasse() {
-		return strasse;
-	}
+    public String getStrasse() {
+        return strasse;
+    }
 
-	public void setStrasse(String strasse) {
-		this.strasse = strasse;
-	}
+    public void setStrasse(String strasse) {
+        this.strasse = strasse;
+    }
 
-	public String getHausnummer() {
-		return hausnummer;
-	}
+    public String getHausnummer() {
+        return hausnummer;
+    }
 
-	public void setHausnummer(String hausnummer) {
-		this.hausnummer = hausnummer;
-	}
+    public void setHausnummer(String hausnummer) {
+        this.hausnummer = hausnummer;
+    }
 
-	public String getPlz() {
-		return plz;
-	}
+    public String getPlz() {
+        return plz;
+    }
 
-	public void setPlz(String plz) {
-		this.plz = plz;
-	}
+    public void setPlz(String plz) {
+        this.plz = plz;
+    }
 
-	public String getOrt() {
-		return ort;
-	}
+    public String getOrt() {
+        return ort;
+    }
 
-	public void setOrt(String ort) {
-		this.ort = ort;
-	}
+    public void setOrt(String ort) {
+        this.ort = ort;
+    }
+
+    @Override
+    public String toString() {
+        return "StandortEntity{" + "id = " + id + ", strasse = " + strasse + ", hausnummer = " + hausnummer + ", PLZ = " + plz + ", ort = " + ort + "}";
+    }
 }
