@@ -1,98 +1,102 @@
 package com.example.mitarbeiterdb.entity;
 
+import jakarta.persistence.*;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "personen")
 public class PersonEntity implements Serializable {
 
-	private static final long serialVersionUID = -1216940057213328598L;
+    @Serial
+    private static final long serialVersionUID = -1216940057213328598L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false, updatable = false)
-	private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-	private String nachname;
-	private String vorname;
-	private Date geburtstag;
-	private String abteilung;
-	private int standortId;
-	private Date anstellungstag;
+    private String nachname;
+    private String vorname;
+    private Date geburtstag;
+    private String abteilung;
+    private int standortId;
+    private Date anstellungstag;
 
-	public PersonEntity() {
-	}
+    public PersonEntity() {
+    }
 
-	public PersonEntity(String nachname, String vorname, Date geburtstag, String abteilung, int standortId,
-			Date anstellungstag) {
-		this.setNachname(nachname);
-		this.setVorname(vorname);
-		this.setGeburtstag(geburtstag);
-		this.setAbteilung(abteilung);
-		this.setStandortId(standortId);
-		this.setAnstellungstag(anstellungstag);
+    public PersonEntity(String nachname, String vorname, Date geburtstag, String abteilung, int standortId,
+                        Date anstellungstag) {
+        this.setNachname(nachname);
+        this.setVorname(vorname);
+        this.setGeburtstag(geburtstag);
+        this.setAbteilung(abteilung);
+        this.setStandortId(standortId);
+        this.setAnstellungstag(anstellungstag);
 
-	}
+    }
 
-	public String getNachname() {
-		return nachname;
-	}
 
-	public void setNachname(String nachname) {
-		this.nachname = nachname;
-	}
+    // Getter and Setter are needed for http statements in Angular project!
 
-	public String getVorname() {
-		return vorname;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
-	}
+    public String getNachname() {
+        return nachname;
+    }
 
-	public Date getGeburtstag() {
-		return geburtstag;
-	}
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
 
-	public void setGeburtstag(Date geburtstag) {
-		this.geburtstag = geburtstag;
-	}
+    public String getVorname() {
+        return vorname;
+    }
 
-	public String getAbteilung() {
-		return abteilung;
-	}
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
 
-	public void setAbteilung(String abteilung) {
-		this.abteilung = abteilung;
-	}
+    public Date getGeburtstag() {
+        return geburtstag;
+    }
 
-	public int getStandortId() {
-		return standortId;
-	}
+    public void setGeburtstag(Date geburtstag) {
+        this.geburtstag = geburtstag;
+    }
 
-	public void setStandortId(int standortId) {
-		this.standortId = standortId;
-	}
+    public String getAbteilung() {
+        return abteilung;
+    }
 
-	public Date getAnstellungstag() {
-		return anstellungstag;
-	}
+    public void setAbteilung(String abteilung) {
+        this.abteilung = abteilung;
+    }
 
-	public void setAnstellungstag(Date anstellungstag) {
-		this.anstellungstag = anstellungstag;
-	}
+    public int getStandortId() {
+        return standortId;
+    }
 
-	@Override
-	public String toString() {
-		return "PersonEntity{" + "id = "  + id + ", nachname = " + nachname + ", vorname = " + vorname + ", geburtstag = " + geburtstag + ", abteilung = " + abteilung + ", standortId = " + standortId + ", anstellungstag = " + anstellungstag + "}";
-	}
+    public void setStandortId(int standortId) {
+        this.standortId = standortId;
+    }
+
+    public Date getAnstellungstag() {
+        return anstellungstag;
+    }
+
+    public void setAnstellungstag(Date anstellungstag) {
+        this.anstellungstag = anstellungstag;
+    }
+
+
+    @Override
+    public String toString() {
+        return "PersonEntity{" + "id = " + id + ", nachname = " + nachname + ", vorname = " + vorname + ", geburtstag = " + geburtstag + ", abteilung = " + abteilung + ", standortId = " + standortId + ", anstellungstag = " + anstellungstag + "}";
+    }
 
 }

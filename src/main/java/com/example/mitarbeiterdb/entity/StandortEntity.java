@@ -11,8 +11,7 @@ public class StandortEntity implements Serializable {
     private static final long serialVersionUID = -4020197691067599627L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = false)
-    private int id;
+    private long id;
 
     private String strasse;
     private String hausnummer;
@@ -27,6 +26,10 @@ public class StandortEntity implements Serializable {
         this.hausnummer = hausnummer;
         this.plz = plz;
         this.ort = ort;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getStrasse() {
