@@ -1,18 +1,6 @@
-package com.example.mitarbeiterdb.entity;
+package com.example.mitarbeiterdb.dto;
 
-import jakarta.persistence.*;
-
-import java.io.Serial;
-import java.io.Serializable;
-
-@Entity
-@Table(name = "standorte")
-public class StandortEntity implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = -4020197691067599627L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class StandortDto {
     private int id;
 
     private String strasse;
@@ -59,10 +47,5 @@ public class StandortEntity implements Serializable {
 
     public void setOrt(String ort) {
         this.ort = ort;
-    }
-
-    @Override
-    public String toString() {
-        return "StandortEntity{" + "id = " + id + ", strasse = " + strasse + ", hausnummer = " + hausnummer + ", PLZ = " + plz + ", ort = " + ort + "}";
     }
 }
