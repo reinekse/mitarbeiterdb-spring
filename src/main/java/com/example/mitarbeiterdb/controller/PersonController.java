@@ -1,6 +1,6 @@
 package com.example.mitarbeiterdb.controller;
 
-import com.example.mitarbeiterdb.entity.PersonEntity;
+import com.example.mitarbeiterdb.dto.PersonDto;
 import com.example.mitarbeiterdb.service.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,28 +19,28 @@ public class PersonController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<PersonEntity>> getAllPersonen() {
-        List<PersonEntity> personen = service.findAllPersonen();
-        return new ResponseEntity<>(personen, HttpStatus.OK);
+    public ResponseEntity<List<PersonDto>> getAllPersonen() {
+        List<PersonDto> personDtoList = service.findAllPersonen();
+        return new ResponseEntity<>(personDtoList, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<PersonEntity> getPersonById(@PathVariable("id") int id) {
-        PersonEntity person = service.findPerson(id);
-        return new ResponseEntity<>(person, HttpStatus.OK);
+    public ResponseEntity<PersonDto> getPersonById(@PathVariable("id") int id) {
+        PersonDto personDto = service.findPerson(id);
+        return new ResponseEntity<>(personDto, HttpStatus.OK);
 
     }
 
     @PostMapping("/add")
-    public ResponseEntity<PersonEntity> addPerson(@RequestBody PersonEntity person) {
-        PersonEntity entity = service.addPerson(person);
-        return new ResponseEntity<>(entity, HttpStatus.CREATED);
+    public ResponseEntity<PersonDto> addPerson(@RequestBody PersonDto person) {
+        PersonDto personDto = service.addPerson(person);
+        return new ResponseEntity<>(personDto, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<PersonEntity> deletePersonById(@PathVariable("id") int id) {
-        PersonEntity person = service.deletePerson(id);
-        return new ResponseEntity<>(person, HttpStatus.NO_CONTENT);
+    public ResponseEntity<PersonDto> deletePersonById(@PathVariable("id") int id) {
+        PersonDto personDto = service.deletePerson(id);
+        return new ResponseEntity<>(personDto, HttpStatus.NO_CONTENT);
 
     }
 

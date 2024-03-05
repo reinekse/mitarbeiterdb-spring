@@ -1,6 +1,6 @@
 package com.example.mitarbeiterdb.controller;
 
-import com.example.mitarbeiterdb.entity.StandortEntity;
+import com.example.mitarbeiterdb.dto.StandortDto;
 import com.example.mitarbeiterdb.service.StandortService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,28 +22,28 @@ public class StandortController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<StandortEntity>> getAllStandorte() {
-        List<StandortEntity> standorte = standortService.findAllStandorte();
-        return new ResponseEntity<>(standorte, HttpStatus.OK);
+    public ResponseEntity<List<StandortDto>> getAllStandorte() {
+        List<StandortDto> standortDtoList = standortService.findAllStandorte();
+        return new ResponseEntity<>(standortDtoList, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<StandortEntity> getStandortById(@PathVariable("id") int id) {
-        StandortEntity standort = standortService.findStandort(id);
-        return new ResponseEntity<>(standort, HttpStatus.OK);
+    public ResponseEntity<StandortDto> getStandortById(@PathVariable("id") int id) {
+        StandortDto standortDto = standortService.findStandort(id);
+        return new ResponseEntity<>(standortDto, HttpStatus.OK);
 
     }
 
     @PostMapping("/add")
-    public ResponseEntity<StandortEntity> addStandort(@RequestBody StandortEntity standort) {
-        StandortEntity entity = standortService.addStandort(standort);
-        return new ResponseEntity<>(entity, HttpStatus.CREATED);
+    public ResponseEntity<StandortDto> addStandort(@RequestBody StandortDto standort) {
+        StandortDto standortDto = standortService.addStandort(standort);
+        return new ResponseEntity<>(standortDto, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<StandortEntity> deleteStandortById(@PathVariable("id") int id) {
-        StandortEntity standort = standortService.deleteStandort(id);
-        return new ResponseEntity<>(standort, HttpStatus.NO_CONTENT);
+    public ResponseEntity<StandortDto> deleteStandortById(@PathVariable("id") int id) {
+        StandortDto standortDto = standortService.deleteStandort(id);
+        return new ResponseEntity<>(standortDto, HttpStatus.NO_CONTENT);
 
     }
 
