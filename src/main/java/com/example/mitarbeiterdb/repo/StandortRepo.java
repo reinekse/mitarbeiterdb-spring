@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @EnableAutoConfiguration
-public interface StandortRepo extends JpaRepository<StandortEntity, Long> {
+public interface StandortRepo extends JpaRepository<StandortEntity, Integer> {
 
 }

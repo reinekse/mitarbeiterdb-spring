@@ -21,7 +21,7 @@ public class StandortService {
 
     }
 
-    public StandortEntity findStandort(long id) {
+    public StandortEntity findStandort(int id) {
         Optional<StandortEntity> standort = standortRepo.findById(id);
 
         if (standort.isPresent()) {
@@ -37,7 +37,7 @@ public class StandortService {
         return standort;
     }
 
-    public StandortEntity deleteStandort(long id) {
+    public StandortEntity deleteStandort(int id) {
         Optional<StandortEntity> standort = standortRepo.findById(id);
         if (standort.isPresent()) {
             standortRepo.deleteById(id);

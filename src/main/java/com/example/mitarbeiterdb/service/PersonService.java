@@ -22,7 +22,7 @@ public class PersonService {
 
     }
 
-    public PersonEntity findPerson(long id) {
+    public PersonEntity findPerson(int id) {
         Optional<PersonEntity> person = personRepo.findById(id);
 
         if (person.isPresent()) {
@@ -38,7 +38,7 @@ public class PersonService {
         return person;
     }
 
-    public PersonEntity deletePerson(long id) {
+    public PersonEntity deletePerson(int id) {
         Optional<PersonEntity> person = personRepo.findById(id);
         if (person.isPresent()) {
             personRepo.deleteById(id);

@@ -15,7 +15,7 @@ public class PersonEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
 
     private String nachname;
     private String vorname;
@@ -41,7 +41,7 @@ public class PersonEntity implements Serializable {
 
     // Getter and Setter are needed for http statements in Angular project!
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

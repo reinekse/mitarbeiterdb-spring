@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @EnableJpaRepositories
 @Repository
-public interface PersonRepo extends JpaRepository<PersonEntity, Long> {
+public interface PersonRepo extends JpaRepository<PersonEntity, Integer> {
 
 }
